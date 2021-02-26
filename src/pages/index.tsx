@@ -1,28 +1,32 @@
 import Head from 'next/head';
+import { GetServerSideProps } from 'next';
 import { useContext, useEffect, useState } from 'react';
 import { ChallengeBox } from '../components/ChallengeBox';
 import { CompleteChallenges } from "../components/CompleteChallenges";
 import { Countdown } from "../components/Countdown";
 import { ExperienceBar } from "../components/ExperienceBar";
-import { NextLevel } from '../components/NextLevel';
 import { Profile } from "../components/Profile";
-import { ChallengesContext } from '../contexts/ChallengesContext';
+import { ChallengesContext, ChallengesProvider } from '../contexts/ChallengesContext';
 import { CountdownProvider } from '../contexts/CountdownContext';
 
 import styles from '../styles/pages/Home.module.css';
 
-export default function Home() {
-  const { level } = useContext(ChallengesContext);
-  const [modalIsActive, setModalIsActive] = useState(false);
+interface HomeProps{
+  level: number;
+  currentExperience: number;
+  challengesCompleted: number;
+}
 
-  useEffect(() => {
-    if (level > 1) {
-      setModalIsActive(true);
-    }
-  }, [level]);
+export default function Home(props: HomeProps) {
+  const { level } = useContext(ChallengesContext);
+  // const [modalIsActive, setModalIsActive] = useState(false);
 
   return (
-    <>
+    <ChallengesProvider 
+      level={props.level} 
+      currentExperience={props.currentExperience} 
+      challengesCompleted={props.challengesCompleted}
+    >
       <div className={styles.container} >
         <Head>
           <title>Inicio | Move.it</title>
@@ -42,9 +46,18 @@ export default function Home() {
           </section>
         </CountdownProvider>
       </div>
-
-
-
-    </>
+    </ChallengesProvider>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  
+  const {level, currentExperience, challengesCompleted} = ctx.req.cookies;
+  return{
+    props: {
+      level: Number(level),
+      currentExperience: Number(currentExperience),
+      challengesCompleted: Number(challengesCompleted)
+    }
+  }
 }
