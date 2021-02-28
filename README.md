@@ -1,4 +1,4 @@
-# ![Move.it](/public/logo-complete.svg)
+# ![Move.it](/public/logo-full-2.svg)
 
 ## Sobre o Move.it
 O move.it surgiu na semana da Next Level Week 4, promovida pela Rocketseat. 
