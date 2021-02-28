@@ -1,10 +1,13 @@
 :root{
+  --primary: #D800B9;
   --white: #fff;
-  --background: #f2f3f5;
+  --background: #121214;
+  --background-card: #202024;
+  --line: #323238;
   --gray-line: #dcdde0;
-  --text: #666666;
+  --text: #dcdde0;
   --text-highlight: #b3b9ff;
-  --title: #2e384d;
+  --title: #D800B9;
   --red: #e83f5b;
   --green: #4cd62b;
   --blue: #5965e0;

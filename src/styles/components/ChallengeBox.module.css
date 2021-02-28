@@ -1,7 +1,7 @@
 .challengeBoxContainer{
   height: 100%;
 
-  background: var(--white);
+  background: var(--background-card);
   border-radius: 5px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
   padding: 1.5rem 2rem;
@@ -48,11 +48,11 @@
 }
 
 .challengeActive header{
-  color: var(--blue);
+  color: var(--primary);
   font-weight: 600;
   font-size: 1.25rem;
   padding: 0 2rem 1.5rem;
-  border-bottom: 1px solid var(--gray-line);
+  border-bottom: 1px solid #323238;
 }
 
 .challengeActive main{
@@ -98,11 +98,11 @@
 }
 
 .challengeSucceededButton{
-  background: var(--green);
+  background: var(--primary);
 }
 
 .challengeFailedButton{
-  background: var(--red);
+  background: var(--blue);
 }
 
 .challengeActive footer button:hover{
