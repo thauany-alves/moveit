@@ -1,4 +1,4 @@
-# ![Move.it](public/logo-complete.svg)
+# ![Move.it](/public/logo-complete.svg)
 
 ## Sobre o Move.it
 O move.it surgiu na semana da Next Level Week 4, promovida pela Rocketseat. 
@@ -8,7 +8,7 @@ Você trabalha em sprints curtos, o que garante que você seja sempre produtivo.
 
 ## Demo 
 
-![Move.it](public/move_it.mp4)
+![Move.it](/public/move_it.mp4)
 
 
 ## Tecnologias utilizadas 
