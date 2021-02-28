@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Move.it](/public/logo-full-2.svg)
 
-## Getting Started
+## Sobre
+O move.it surgiu na semana da Next Level Week 4, promovida pela Rocketseat. 
+A ideia principal segue a técnica de pomodoro,um sistema cíclico que divide o trabalho em intervalos curtos e cronometrados (chamados “Pomodoros”) que são espaçados por intervalos curtos.   
 
-First, run the development server:
+Isso treina o cérebro para se concentrar por curtos períodos e pode até ajudar a melhorar a atenção e a concentração.  
 
+No move.it a ideia é que nos intervalos curtos entre os ciclos de trabalho é fazer exercicíos com o corpo ou com os olhos, para trazer um benefício maior e auxiliar também a saúde física. Visto que passamos muito tempo sentados e com os olhos fixos em telas de computadores ou celulares.   
+
+
+### Demo 
+
+![Move.it](/public/move_it.gif)
+
+### Acesse em
+[Acesse Move.it](https://moveit-seven-sooty.vercel.app/)
+
+### Tecnologias utilizadas para desenvolvimento
+- Next.js
+- React
+- Typescript
+
+## Clonar código e executar em sua máquina
+
+1. Primeiro clone o repositório para sua máquina
+```bash
+git clone https://github.com/thauany-alves/moveit
+```
+
+2. Vá para o diretório/caminho o qual clonou o repositório
+```bash
+cd moveit
+```
+
+3. Instale as dependências para executar o projeto
+```bash
+yarn
+# or
+npm install
+```
+4. Execute o comando abaixo para executar a aplicação 
 ```bash
 npm run dev
 # or
 yarn dev
 ```
+5. No seu navegador acesse o endereço [http://localhost:3000](http://localhost:3000) e visualize a aplicação rodando.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
