@@ -1,22 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ![Move.it](public/logo-complete.svg)
 
-## Getting Started
+## Sobre o Move.it
+O move.it surgiu na semana da Next Level Week 4, promovida pela Rocketseat. 
+A ideia principal segue a técnica de pomodoro,um sistema cíclico que divide o trabalho em intervalos curtos e cronometrados (chamados “Pomodoros”) que são espaçados por intervalos curtos.  
+Isso treina o cérebro para se concentrar por curtos períodos e pode até ajudar a melhorar a atenção e a concentração.  
+Você trabalha em sprints curtos, o que garante que você seja sempre produtivo. Você também pode fazer pausas regulares que reforcem sua motivação e mantenham a criatividade.
 
-First, run the development server:
+## Demo 
 
+![Move.it](public/move_it.mp4)
+
+
+## Tecnologias utilizadas 
+- Next.js
+- React
+- Typescript
+
+## Executar em sua maquina
+
+1. Primeiro clone o repositório para sua máquina
+```bash
+git clone https://github.com/thauany-alves/moveit
+```
+2. Vá para o diretório/caminho o qual clonou o repositório
+```bash
+cd moveit
+```
+3. Execute o comando abaixo para executar a aplicação 
 ```bash
 npm run dev
 # or
 yarn dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+4. No seu navegador vá para o endereço [http://localhost:3000](http://localhost:3000) e visualize a aplicação rodando.
 
 ## Learn More
 
