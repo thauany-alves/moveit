@@ -1,63 +1,69 @@
-import Head from 'next/head';
-import { GetServerSideProps } from 'next';
-import { useContext, useEffect, useState } from 'react';
-import { ChallengeBox } from '../components/ChallengeBox';
-import { CompleteChallenges } from "../components/CompleteChallenges";
-import { Countdown } from "../components/Countdown";
-import { ExperienceBar } from "../components/ExperienceBar";
-import { Profile } from "../components/Profile";
-import { ChallengesContext, ChallengesProvider } from '../contexts/ChallengesContext';
-import { CountdownProvider } from '../contexts/CountdownContext';
+import axios from 'axios';
+import { useRouter } from 'next/router';
+import { useState, FormEvent, useContext, useEffect } from 'react';
+import { UserContext } from '../contexts/UserContext';
+import styles from '../styles/pages/LoginPage.module.css';
 
-import styles from '../styles/pages/Home.module.css';
 
-interface HomeProps{
-  level: number;
-  currentExperience: number;
-  challengesCompleted: number;
-}
+export default function Login(){
+  const [username, setUsername] = useState('');
 
-export default function Home(props: HomeProps) {
-  const { level } = useContext(ChallengesContext);
-  // const [modalIsActive, setModalIsActive] = useState(false);
+  const { setUserGit } = useContext(UserContext);
 
-  return (
-    <ChallengesProvider 
-      level={props.level} 
-      currentExperience={props.currentExperience} 
-      challengesCompleted={props.challengesCompleted}
-    >
-      <div className={styles.container} >
-        <Head>
-          <title>Inicio | Move.it</title>
-        </Head>
+  async function getUserOnGit(e: FormEvent){
+    e.preventDefault();
 
-        <ExperienceBar />
-        <CountdownProvider>
-          <section>
-            <div>
-              <Profile />
-              <CompleteChallenges />
-              <Countdown />
-            </div>
-            <div>
-              <ChallengeBox />
-            </div>
-          </section>
-        </CountdownProvider>
-      </div>
-    </ChallengesProvider>
-  )
-}
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  
-  const {level, currentExperience, challengesCompleted} = ctx.req.cookies;
-  return{
-    props: {
-      level: Number(level),
-      currentExperience: Number(currentExperience),
-      challengesCompleted: Number(challengesCompleted)
-    }
+    await axios.get(`https://api.github.com/users/${username}`)
+    .then(({data}) => {
+      if(data.message) return alert('Username não encontrado');
+      let name = data.name === null ? data.login : data.name;
+      setUserGit(name, data.avatar_url)
+    });
   }
+   
+  return(
+    <div className={styles.container}>
+      <div className={styles.logoBackground}>
+        <img src="background.svg" alt=""/>
+      </div>
+      <div className={styles.loginContainer}>
+        <img src="logo-complete.svg" alt=""/>
+
+        <header>Bem-vindo</header>
+        <main>
+          <img src="icons/git.svg" alt="Logo Github"/>
+          Faça login com seu Github para começar
+        </main>
+
+        <form onSubmit={getUserOnGit}>
+          <div className={styles.InputGroup}>
+            <input onChange={ e => setUsername(e.target.value)} value={username} type="text" placeholder="Digite seu username"/>
+            <button type="submit">
+              <img src="icons/arrow-next.svg" alt=""/>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 }
+
+// export const getStaticProps: GetStaticProps = async () => {
+//   const res = await fetch(`https://github.com/login/oauth/access_token`)
+//   const data = await res.json()
+
+//   // if (data) {
+//   //   return {
+//   //     redirect: {
+//   //       destination: '/',
+//   //       permanent: false,
+//   //     },
+//   //   }
+//   // }
+
+//   console.log(data);
+
+//   return {
+//     props: {}, // will be passed to the page component as props
+//   }
+// }

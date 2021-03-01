@@ -1,9 +1,12 @@
 import '../styles/global.css';
+import UserProvider from '../contexts/UserContext';
 
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Component {...pageProps} />
+    <UserProvider>
+      <Component {...pageProps} />
+    </UserProvider>
   );
 }
 
